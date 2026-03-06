@@ -1,9 +1,8 @@
 ---
 # orchestrator.md — Coordinator
 on:
-  push:
-    tags:
-      - "v*"
+  release:
+    types: [published]
 
 permissions:
   contents: read

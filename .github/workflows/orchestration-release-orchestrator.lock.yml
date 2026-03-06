@@ -22,18 +22,18 @@
 # For more information: https://github.github.com/gh-aw/introduction/overview/
 #
 #
-# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"b038583ee6ecb0c78ab651ade9662c1f72ef96d1c69a373545f551d52fcfddf5","compiler_version":"v0.53.4"}
+# gh-aw-metadata: {"schema_version":"v1","frontmatter_hash":"ce221c5001ebf89662496daf6e955d65a067ec43c64b7ad9e640df7cb533372d","compiler_version":"v0.53.4"}
 
 name: "Release Orchestrator"
 "on":
-  push:
-    tags:
-    - v*
+  release:
+    types:
+    - published
 
 permissions: {}
 
 concurrency:
-  group: "gh-aw-${{ github.workflow }}-${{ github.ref || github.run_id }}"
+  group: "gh-aw-${{ github.workflow }}"
 
 run-name: "Release Orchestrator"
 
@@ -237,6 +237,8 @@ jobs:
       contents: read
       issues: read
       pull-requests: read
+    concurrency:
+      group: "gh-aw-copilot-${{ github.workflow }}"
     env:
       DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
       GH_AW_ASSETS_ALLOWED_EXTS: ""
