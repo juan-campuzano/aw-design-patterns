@@ -1,6 +1,6 @@
 ---
 # This workflow lives in: my-org/internal-automation (private)
-# It acts on:           my-org/awesome-oss-project (public)
+# It acts on:           juan-campuzano/aw-design-patterns (public)
 
 on:
   schedule: daily
@@ -12,9 +12,9 @@ permissions:
 
 safe-outputs:
   add-comment:
-    target-repo: my-org/awesome-oss-project
+    target-repo: juan-campuzano/aw-design-patterns
   add-labels:
-    target-repo: my-org/awesome-oss-project
+    target-repo: juan-campuzano/aw-design-patterns
     allowed: [stale, needs-triage, good-first-issue]
 
 tools:
@@ -23,7 +23,7 @@ tools:
 
 # OSS Issue Staleness Manager (SideRepo)
 
-Manage stale issues in my-org/awesome-oss-project from this private automation repo.
+Manage stale issues in juan-campuzano/aw-design-patterns from this private automation repo.
 
 ## Workflow
 
