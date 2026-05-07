@@ -15,6 +15,10 @@ safe-outputs:
 
 tools:
   github: {}
+
+engine:
+  id: copilot
+  model: claude-sonnet-4.5
 ---
 
 # Issue Triage Agent
